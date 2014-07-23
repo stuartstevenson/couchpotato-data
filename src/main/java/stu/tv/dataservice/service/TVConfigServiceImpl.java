@@ -1,7 +1,8 @@
-package stu.tv.dataservice;
+package stu.tv.dataservice.service;
 
 import org.springframework.stereotype.Service;
 import stu.tv.dataservice.domain.TeamTVConfig;
+import stu.tv.dataservice.service.TVConfigService;
 
 import java.util.*;
 

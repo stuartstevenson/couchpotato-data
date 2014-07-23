@@ -2,10 +2,10 @@ package stu.tv.dataservice;
 
 import org.springframework.web.bind.annotation.*;
 import stu.tv.dataservice.domain.TeamTVConfig;
+import stu.tv.dataservice.service.TVConfigService;
 
 import javax.inject.Inject;
 import java.util.Collection;
-import java.util.List;
 
 @RestController
 public class TVDataServiceController {
@@ -13,8 +13,13 @@ public class TVDataServiceController {
     @Inject
     private TVConfigService tvConfigService;
 
+    @RequestMapping("/")
+    public String index() {
+        return "Welcome to Couchpotato";
+    }
+
     @RequestMapping("/tvconfig")
-    public Collection<TeamTVConfig> index() {
+    public Collection<TeamTVConfig> getAll() {
         return tvConfigService.get();
     }
 

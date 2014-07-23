@@ -10,9 +10,6 @@ apply plugin: 'spring-boot'
 
 repositories { mavenCentral() }
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("javax.inject:javax.inject:1")
-
-    testCompile("org.springframework.boot:spring-boot-starter-test")
 }

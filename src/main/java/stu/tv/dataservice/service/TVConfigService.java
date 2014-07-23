@@ -1,4 +1,4 @@
-package stu.tv.dataservice;
+package stu.tv.dataservice.service;
 
 import stu.tv.dataservice.domain.TeamTVConfig;
 
