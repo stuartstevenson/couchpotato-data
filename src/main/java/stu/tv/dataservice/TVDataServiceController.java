@@ -24,7 +24,7 @@ public class TVDataServiceController {
     }
 
     @RequestMapping("/tvconfig/{tvId}")
-    public TeamTVConfig get(@PathVariable("tvId") String tvId) {
+    public TeamTVConfig get(@PathVariable("tvId") Long tvId) {
         return tvConfigService.getById(tvId);
     }
 

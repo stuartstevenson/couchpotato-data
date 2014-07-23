@@ -2,14 +2,13 @@ package stu.tv.dataservice.service;
 
 import org.springframework.stereotype.Service;
 import stu.tv.dataservice.domain.TeamTVConfig;
-import stu.tv.dataservice.service.TVConfigService;
 
 import java.util.*;
 
 @Service
 public class TVConfigServiceImpl implements TVConfigService {
 
-    private static Map<String,TeamTVConfig> teamTVConfigs = new HashMap<String, TeamTVConfig>();
+    private static Map<Long,TeamTVConfig> teamTVConfigs = new HashMap<Long, TeamTVConfig>();
 
     @Override
     public Collection<TeamTVConfig> get() {
@@ -17,12 +16,12 @@ public class TVConfigServiceImpl implements TVConfigService {
     }
 
     @Override
-    public TeamTVConfig getById(String tvId) {
+    public TeamTVConfig getById(Long tvId) {
         return teamTVConfigs.get(tvId);
     }
 
     @Override
     public void post(TeamTVConfig teamTVConfig) {
-        teamTVConfigs.put(teamTVConfig.getTvId(), teamTVConfig);
+        teamTVConfigs.put(teamTVConfig.getId(), teamTVConfig);
     }
 }
