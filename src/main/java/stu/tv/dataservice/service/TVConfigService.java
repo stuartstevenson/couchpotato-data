@@ -1,13 +1,15 @@
 package stu.tv.dataservice.service;
 
-import stu.tv.dataservice.domain.TeamTVConfig;
+import stu.tv.dataservice.domain.TvConfig;
+import stu.tv.dataservice.web.TvConfigForm;
 
 import java.util.Collection;
 
-public interface TVConfigService {
-    Collection<TeamTVConfig> get();
+public interface TvConfigService {
+    Collection<TvConfig> get();
 
-    TeamTVConfig getById(Long tvId);
+    TvConfig getById(Long tvId);
 
-    void post(TeamTVConfig teamTVConfig);
+    TvConfig save(TvConfigForm teamTvConfigForm);
+
 }
