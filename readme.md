@@ -10,6 +10,7 @@ output:
     "description": "new world pillar 1",
     "urls": [
         {
+        	"id": 1
             "url": "http://www.rightmove.co.uk",
             "intervalInSeconds": 60
         }
