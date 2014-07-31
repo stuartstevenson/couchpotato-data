@@ -4,6 +4,7 @@ public class TvUrlForm {
 	private Long id;
 	private String url;
 	private Integer interval;
+	private Integer sequence;
 
 	public Long getId() {
 		return id;
@@ -27,5 +28,13 @@ public class TvUrlForm {
 
 	public void setInterval(Integer interval) {
 		this.interval = interval;
+	}
+
+	public Integer getSequence() {
+		return sequence;
+	}
+
+	public void setSequence(Integer sequence) {
+		this.sequence = sequence;
 	}
 }

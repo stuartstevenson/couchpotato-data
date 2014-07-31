@@ -43,6 +43,7 @@ public class TvConfig implements Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tvConfig")
+	@OrderBy("SEQUENCE")
 	public Set<TvUrl> getUrls() {
 		return urls;
 	}
