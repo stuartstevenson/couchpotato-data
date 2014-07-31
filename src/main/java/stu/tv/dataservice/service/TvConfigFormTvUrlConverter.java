@@ -32,6 +32,7 @@ public class TvConfigFormTvUrlConverter implements Converter<TvConfigForm, Set<T
 			}
 			tvUrl.setUrl(form.getUrl());
 			tvUrl.setInterval(form.getInterval());
+			tvUrl.setSequence(form.getSequence());
 			tvUrls.add(tvUrl);
 		}
 		return tvUrls;

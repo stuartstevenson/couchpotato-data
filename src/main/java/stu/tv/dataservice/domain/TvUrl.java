@@ -1,7 +1,6 @@
 package stu.tv.dataservice.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,6 +12,7 @@ public class TvUrl implements Serializable {
 	private Long id;
     private String url;
     private Integer interval;
+	private Integer sequence;
 	private TvConfig tvConfig;
 
     public TvUrl() {
@@ -57,6 +57,15 @@ public class TvUrl implements Serializable {
     public void setInterval(Integer interval) {
         this.interval = interval;
     }
+
+	@Column(name = "SEQUENCE")
+	public Integer getSequence() {
+		return sequence;
+	}
+
+	public void setSequence(Integer sequence) {
+		this.sequence = sequence;
+	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "TV_CONFIG_ID", nullable = false)
