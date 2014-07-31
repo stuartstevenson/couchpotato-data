@@ -11,5 +11,10 @@ apply plugin: 'spring-boot'
 repositories { mavenCentral() }
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-starter-test")
     compile("javax.inject:javax.inject:1")
+    compile("com.google.guava:guava:17.0")
+    runtime("com.h2database:h2:1.4.180")
 }

@@ -1,17 +1,17 @@
-package stu.tv.dataservice;
+package stu.tv.dataservice.web;
 
 import org.springframework.web.bind.annotation.*;
-import stu.tv.dataservice.domain.TeamTVConfig;
-import stu.tv.dataservice.service.TVConfigService;
+import stu.tv.dataservice.domain.TvConfig;
+import stu.tv.dataservice.service.TvConfigService;
 
 import javax.inject.Inject;
 import java.util.Collection;
 
 @RestController
-public class TVDataServiceController {
+public class TvConfigController {
 
     @Inject
-    private TVConfigService tvConfigService;
+    private TvConfigService tvConfigService;
 
     @RequestMapping("/")
     public String index() {
@@ -19,18 +19,17 @@ public class TVDataServiceController {
     }
 
     @RequestMapping("/tvconfig")
-    public Collection<TeamTVConfig> getAll() {
+    public Collection<TvConfig> getAll() {
         return tvConfigService.get();
     }
 
     @RequestMapping("/tvconfig/{tvId}")
-    public TeamTVConfig get(@PathVariable("tvId") Long tvId) {
+    public TvConfig get(@PathVariable("tvId") Long tvId) {
         return tvConfigService.getById(tvId);
     }
 
     @RequestMapping(value = "/tvconfig",method = RequestMethod.POST)
-    public TeamTVConfig post(@RequestBody TeamTVConfig teamTVConfig) {
-        tvConfigService.post(teamTVConfig);
-        return teamTVConfig;
+    public TvConfig save(@RequestBody TvConfigForm teamTvConfigForm) {
+        return tvConfigService.save(teamTvConfigForm);
     }
 }
